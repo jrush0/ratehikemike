@@ -6,9 +6,17 @@ import Tooltip from './Tooltip';
 import clipsImage from './assets/clips1.png';
 import nytimesImage from './assets/nytimes.jpg';
 import NumberTicker from './NumberTicker';
-import SimpleNumberTicker from './SimpleNumberTicker';
 import natashaImage from './assets/natasha.png';
 import causeyImage from './assets/causey.png';
+import RateTicker from './RateTicker';
+
+const preloadImages = () => {
+  const images = [headerImage, clipsImage, nytimesImage, natashaImage, causeyImage];
+  images.forEach((image) => {
+    const img = new Image();
+    img.src = image;
+  });
+};
 
 const CountySearch = () => {
   const [selectedCounty, setSelectedCounty] = useState(null);
@@ -17,7 +25,7 @@ const CountySearch = () => {
 
   const handleSelectCounty = (county) => {
     setSelectedCounty(county);
-    setAnimationKey(prevKey => prevKey + 1); // Increment the animation key
+    setAnimationKey(prevKey => prevKey + 1);
   };
 
   const handleAutocompleteVisibility = (visible) => {
@@ -25,13 +33,17 @@ const CountySearch = () => {
   };
 
   useEffect(() => {
+    preloadImages();
+  }, []);
+
+  useEffect(() => {
     if (selectedCounty) {
+      const container = document.getElementById('datawrapper-vis-DRzg6');
+      container.innerHTML = ''; // Clear previous content
       const script = document.createElement('script');
       script.src = "https://datawrapper.dwcdn.net/DRzg6/embed.js";
       script.async = true;
-      script.charset = "utf-8";
-      script.setAttribute('data-target', '#datawrapper-vis-DRzg6');
-      document.getElementById('datawrapper-vis-DRzg6').appendChild(script);
+      container.appendChild(script);
     }
   }, [selectedCounty]);
 
@@ -42,7 +54,7 @@ const CountySearch = () => {
         <div className="search-content">
           <h1><strong>Mike Causey has approved an unprecedented 16 rate hikes as NC Commissioner of Insurance.</strong></h1>
           <br />
-          <h2 className="unbolded">Enter your county to see how Rate Hike Mike has hit your homeowners insurance rates.</h2>
+          <h2>Enter your county to see how Rate Hike Mike has hit your homeowners insurance rates.</h2>
           <br />
           <SearchBar 
             data={countyData} 
@@ -50,29 +62,25 @@ const CountySearch = () => {
             onAutocompleteVisibility={handleAutocompleteVisibility}
           />
           {selectedCounty && (
-            <div className="result-container" key={animationKey}>
+            <div className="result-container animate-fade-in" key={animationKey}>
               <h2>In {selectedCounty.County} County...</h2>
               <div className="info-box-container">
-                <div className="info-box" style={{ animationDelay: '0.2s' }}>
+                <div className="info-box animate-fade-in" style={{animationDelay: '0.1s'}}>
                   <p dangerouslySetInnerHTML={{ __html: selectedCounty["Higher than inflation"] }}></p>
                 </div>
-                <div className="info-box" style={{ animationDelay: '0.4s' }}>
+                <div className="info-box animate-fade-in" style={{animationDelay: '0.2s'}}>
                   <p>This county has a <strong>{selectedCounty["2024 NCRB Proposed Rate increase"]}%</strong> rate hike request pending for 2024.</p>
                 </div>
-                <div className="info-box" style={{ animationDelay: '0.6s' }}>
+                <div className="info-box animate-fade-in" style={{animationDelay: '0.3s'}}>
                   <p><strong>{selectedCounty["% CTR Policy Premium 2023"]}%</strong> of policy premiums were subject to Consent to Rate notices in 2023.</p>
                 </div>
-                <div className="info-box" style={{ animationDelay: '0.8s' }}>
+                <div className="info-box animate-fade-in" style={{animationDelay: '0.4s'}}>
                   <p className="info-text">
                     <strong>Mike Causey's impact on homeowners rates statewide</strong>
                     <Tooltip content="Rate increase data for Form Forms 2,3,5,7, and 8 filings. Some rate increases and proposed rates may be inaccurate for beach areas, which are regarded by DOI and the Rate Bureau as separate territories. Inflation data source: U.S. Bureau of Labor Statistics. Consent to Rate information organized by NC Rate Bureau territory. Source: [NCRB Rate Filings](https://www.ncrb.org/ncrb/Residential-Property/Data-Reporting), [NCDOI Data Calls](https://www.ncdoi.gov/data-calls)." />
                     <br />Tap or mouseover a county to see the impact of Mike Causey's rate hikes on that area.
                   </p>
-                  <div style={{ minHeight: "426px" }} id="datawrapper-vis-DRzg6">
-                    <noscript>
-                      <img src="https://datawrapper.dwcdn.net/DRzg6/full.png" alt="Data visualization" />
-                    </noscript>
-                  </div>
+                  <div id="datawrapper-vis-DRzg6"></div>
                 </div>
               </div>
             </div>
@@ -120,13 +128,15 @@ const CountySearch = () => {
                 </p>
               </div>
             </div>
-            <div className="stats-box-new animate-on-scroll">
-              <div className="stats-number-new">
-                <SimpleNumberTicker start={0} end={6} duration={10} delay={0} />
+            <div className="info-box stats-box">
+              <div className="rate-ticker-wrapper">
+                <RateTicker />
               </div>
-              <div className="stats-text-new">
-                Before Causey, North Carolinians paid the lowest auto rates in the country. Under Rate Hike Mike, NC is <strong>no longer in the top 5.</strong>
-                <Tooltip content="Source: [NC out of the top 6](https://www.usnews.com/insurance/auto/cheapest-states-for-car-insurance), [Lowest rates in the nation before Causey](https://www.cbsnews.com/media/the-five-best-and-worst-states-for-car-insurance-costs/)" />
+              <div className="stats-text">
+                <p>
+                  NC used to pay the lowest auto rates in the country. Under Rate Hike Mike, NC is <strong>no longer in the top 5.</strong>
+                  <Tooltip content="Source: [NC out of the top 5](https://www.usnews.com/insurance/auto/cheapest-states-for-car-insurance), [Lowest rates in the nation before Causey](https://www.cbsnews.com/media/the-five-best-and-worst-states-for-car-insurance-costs/)" />
+                </p>
               </div>
             </div>
           </div>
