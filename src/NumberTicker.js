@@ -1,20 +1,19 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 
 const NumberTicker = ({ start, end, duration, delay, prefix = '', suffix = '' }) => {
   const [number, setNumber] = useState(start);
   const [isVisible, setIsVisible] = useState(false);
   const tickerRef = useRef(null);
 
+  const observerCallback = useCallback((entries) => {
+    const [entry] = entries;
+    if (entry.isIntersecting) {
+      setIsVisible(true);
+    }
+  }, []);
+
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
+    const observer = new IntersectionObserver(observerCallback, { threshold: 0.1 });
 
     if (tickerRef.current) {
       observer.observe(tickerRef.current);
@@ -25,7 +24,7 @@ const NumberTicker = ({ start, end, duration, delay, prefix = '', suffix = '' })
         observer.unobserve(tickerRef.current);
       }
     };
-  }, []);
+  }, [observerCallback]);
 
   useEffect(() => {
     if (!isVisible) return;
