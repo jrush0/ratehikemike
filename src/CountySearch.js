@@ -134,7 +134,7 @@ const CountySearch = () => {
               </div>
               <div className="stats-text">
                 <p>
-                  NC used to pay the lowest auto rates in the country. Under Rate Hike Mike, NC is <strong>no longer in the top 5.</strong>
+                  NC used to pay the lowest auto rates in the country. Under Rate Hike Mike, NC <strong>dropped out of the top 5.</strong>
                   <Tooltip content="Source: [NC out of the top 5](https://www.usnews.com/insurance/auto/cheapest-states-for-car-insurance), [Lowest rates in the nation before Causey](https://www.cbsnews.com/media/the-five-best-and-worst-states-for-car-insurance-costs/)" />
                 </p>
               </div>
