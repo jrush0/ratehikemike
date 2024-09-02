@@ -14,14 +14,15 @@ const NumberTicker = ({ start, end, duration, delay, prefix = '', suffix = '' })
 
   useEffect(() => {
     const observer = new IntersectionObserver(observerCallback, { threshold: 0.1 });
+    const currentRef = tickerRef.current;
 
-    if (tickerRef.current) {
-      observer.observe(tickerRef.current);
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (tickerRef.current) {
-        observer.unobserve(tickerRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, [observerCallback]);

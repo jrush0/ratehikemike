@@ -16,13 +16,15 @@ const SimpleNumberTicker = ({ start = 1, end, duration = 0.3, delay }) => {
       { threshold: 0.1 }
     );
 
-    if (tickerRef.current) {
-      observer.observe(tickerRef.current);
+    const currentRef = tickerRef.current;
+
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (tickerRef.current) {
-        observer.unobserve(tickerRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
