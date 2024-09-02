@@ -748,7 +748,7 @@ html, body {
 }
 
 .desktop-spacer {
-  height: 40px; /* Equivalent to two <br> tags */
+  height: 80px; /* Equivalent to two <br> tags */
   display: block;
 }
 
@@ -1082,10 +1082,6 @@ html, body {
 
 .natasha-image, .causey-image {
   animation: slideInFromRight 0.8s ease-out 0.4s both;
-}
-
-.learn-more-button {
-  animation: pulse 2s infinite;
 }
 
 .footer-box {
