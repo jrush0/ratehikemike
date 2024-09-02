@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 
-const NumberTicker = ({ start, end, duration, delay, prefix = '', suffix = '' }) => {
+const SimpleNumberTicker = ({ start = 1, end, duration = 0.3, delay }) => {
   const [number, setNumber] = useState(start);
   const [isVisible, setIsVisible] = useState(false);
   const tickerRef = useRef(null);
@@ -46,7 +46,7 @@ const NumberTicker = ({ start, end, duration, delay, prefix = '', suffix = '' })
     return () => clearTimeout(timeoutId);
   }, [isVisible, start, end, duration, delay]);
 
-  return <span ref={tickerRef} className="number-ticker">{prefix}{number.toLocaleString()}{suffix}</span>;
+  return <span ref={tickerRef} className="number-ticker">{number}</span>;
 };
 
-export default NumberTicker;
+export default SimpleNumberTicker;

@@ -4,7 +4,9 @@ import headerImage from './assets/header.png';
 import SearchBar from './SearchBar';
 import Tooltip from './Tooltip';
 import clipsImage from './assets/clips1.png';
+import nytimesImage from './assets/nytimes.jpg';
 import NumberTicker from './NumberTicker';
+import SimpleNumberTicker from './SimpleNumberTicker';
 import natashaImage from './assets/natasha.png';
 import causeyImage from './assets/causey.png';
 
@@ -80,7 +82,7 @@ const CountySearch = () => {
       <div className={`mask ${isAutocompleteVisible ? 'active' : ''}`}></div>
       <br /><br /><br />
       {/* New section */}
-      <div className="county-search">
+      <div className="county-search animate-on-scroll">
         <div className="search-content">
           <h1>Mike Causey's rate hikes by the numbers</h1>
           <br />
@@ -97,7 +99,7 @@ const CountySearch = () => {
             <div className="info-box stats-box">
               <div className="stats-number">3</div>
               <div className="stats-text">
-                <p><strong>Three</strong> auto rate hikes. His predecessor <strong>retracted</strong> an auto increase during his tenure.
+                <p><strong>Three</strong> auto rate hikes. His predecessor allowed none and even <strong>retracted</strong> an auto increase during his tenure.
                   <Tooltip content="Sources: [2017 Causey Rate Hike](https://www.ncrb.org/Portals/0/ncrb/annual%20reports/NCRB%202017%20Annual%20Report.pdf?ver=2017-10-13-091709-000), [2024 and 2025 Causey Rate Hikes](https://www.newsobserver.com/news/local/article282412798.html), [Wayne Goodwin Rate Retraction](https://www.wral.com/news/local/story/5577164/)" />
                 </p>
               </div>
@@ -113,9 +115,18 @@ const CountySearch = () => {
             <div className="info-box stats-box">
               <div className="stats-number">6</div>
               <div className="stats-text">
-                <p><strong>Six</strong> mobile home insurance hikes. His predecessor allowed <strong>two.</strong>
+                <p><strong>Six</strong> mobile home insurance hikes. His predecessor allowed only <strong>two.</strong>
                   <Tooltip content="Sources: [2019 2x Causey Rate Hikes](https://www.insurancejournal.com/news/southeast/2019/09/30/541569.htm), [2021 2x Causey Rate Hikes](https://www.carolinacoastonline.com/news_times/article_632278b2-43f0-11ec-b873-6b247d7007f4.html), [2023 2x Causey Rate Hike](https://wlos.com/news/local/mobile-home-owners-in-north-carolina-face-smaller-insurance-rate-increases-insurance-commissioner-mike-causey-north-carolina-rate-bureau-department-of-insurance), [2015 Wayne Goodwin Rate Hike](https://www.ncrb.org/Portals/0/ncrb/personal%20lines%20services/Rate%20Filings/4-22-15%20Final%20MH%28C%29%20Settlement%20Agreement%20and%20Consent%20Order.pdf?ver=2015-05-06-111356-000)" />
                 </p>
+              </div>
+            </div>
+            <div className="stats-box-new animate-on-scroll">
+              <div className="stats-number-new">
+                <SimpleNumberTicker start={0} end={6} duration={10} delay={0} />
+              </div>
+              <div className="stats-text-new">
+                Before Causey, North Carolinians paid the lowest auto rates in the country. Under Rate Hike Mike, NC is <strong>no longer in the top 5.</strong>
+                <Tooltip content="Source: [NC out of the top 6](https://www.usnews.com/insurance/auto/cheapest-states-for-car-insurance), [Lowest rates in the nation before Causey](https://www.cbsnews.com/media/the-five-best-and-worst-states-for-car-insurance-costs/)" />
               </div>
             </div>
           </div>
@@ -123,18 +134,23 @@ const CountySearch = () => {
       </div>
       <br /><br /><br />
       {/* New section for Rate Hike Mike's insurance company profits */}
-      <div className="county-search">
+      <div className="county-search animate-on-scroll">
         <div className="search-content">
-          <div className="full-width-image-container">
+          <div className="full-width-image-container animate-on-scroll">
             <img 
               src={clipsImage} 
               alt="Two newspaper clippings reading Wall Street Journal: Insurers rake in profits as customers pay soaring premiums and CBS 17: Some insurance companies report record profits amid NC rate hike request." 
               className="full-width-image" 
             />
-            <h1>Causey has allowed insurance company profits to soar, while his campaigns reap the rewards.</h1>
+            <h1>Causey has allowed insurance company profits to soar in NC, while his campaigns reap the rewards.</h1>
           </div>
-          <div className="profit-box">
-            <NumberTicker endValue="250000" duration={16} />
+          <div className="profit-box animate-on-scroll">
+            <img src={nytimesImage} alt="New York Times" className="full-width-image" />
+          </div>
+          <div className="profit-box animate-on-scroll">
+            <div className="number-ticker-container">
+              <NumberTicker start={0} end={250000} duration={16} delay={2} prefix="$" suffix="+" />
+            </div>
             <p className="profit-text">
               Causey has accepted more than $250,000 in campaign donations from insurance industry sources.
               <Tooltip content="Source: [NC State Board of Elections](https://cf.ncsbe.gov/CFOrgLkup/DocumentGeneralResult/?SID=STA-036R3D-C-001&OGID=30987)" />
@@ -142,7 +158,7 @@ const CountySearch = () => {
           </div>
         </div>
       </div>
-      <div className="worse-option-section">
+      <div className="worse-option-section animate-on-scroll">
         <div className="worse-option-content">
           <div className="worse-option-text">
             <h1>Mike Causey isn't on our side.</h1>
@@ -164,7 +180,7 @@ const CountySearch = () => {
           </div>
         </div>
       </div>
-      <div className="better-option-section">
+      <div className="better-option-section animate-on-scroll">
         <div className="better-option-content">
           <div className="better-option-text">
             <h1>There's a better option for NC Insurance Commissioner:</h1>
@@ -186,7 +202,7 @@ const CountySearch = () => {
           <img src={natashaImage} alt="Natasha Marcus" className="natasha-image" />
         </div>
       </div>
-      <div className="footer-container">
+      <div className="footer-container animate-on-scroll">
         <div className="footer-box">
           Paid for by Friends of Natasha Marcus
         </div>

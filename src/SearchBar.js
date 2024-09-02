@@ -5,7 +5,7 @@ const SearchBar = ({ data, onSelect, onAutocompleteVisibility }) => {
   const [filteredData, setFilteredData] = useState([]);
 
   useEffect(() => {
-    if (inputValue) {
+    if (inputValue.length >= 3) {
       const filtered = data
         .filter(item => item.County.toLowerCase().includes(inputValue.toLowerCase()))
         .slice(0, 3);

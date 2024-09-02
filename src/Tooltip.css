@@ -39,3 +39,9 @@
     position: relative;
     top: -2px; /* Raise the icon a few pixels */
   }
+  
+  .tooltip {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+  }
