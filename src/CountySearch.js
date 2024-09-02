@@ -142,7 +142,7 @@ const CountySearch = () => {
               alt="Two newspaper clippings reading Wall Street Journal: Insurers rake in profits as customers pay soaring premiums and CBS 17: Some insurance companies report record profits amid NC rate hike request." 
               className="full-width-image" 
             />
-            <h1>Causey has allowed insurance company profits to soar in NC, while his campaigns reap the rewards.</h1>
+            <h1>Causey has allowed insurance company profits to soar in NC, while his campaigns reap the rewards.<Tooltip content="Sources: [Wall Street Journal Article](https://www.wsj.com/finance/insurance-companies-profits-stock-ebae7fd1), [CBS 17 Article](https://www.cbs17.com/news/capitol-report/some-insurance-companies-report-record-profits-amid-nc-rate-hike-request/), [NY Times Article (below)](https://www.nytimes.com/interactive/2024/05/13/climate/home-insurance-profit-us-states-weather.html)" /></h1>
           </div>
           <div className="profit-box animate-on-scroll">
             <img src={nytimesImage} alt="New York Times" className="full-width-image" />
