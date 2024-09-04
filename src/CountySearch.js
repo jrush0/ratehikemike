@@ -72,8 +72,8 @@ const CountySearch = () => {
                   <p>This county has a <strong>{selectedCounty["2024 NCRB Proposed Rate increase"]}%</strong> rate hike request pending for 2024.</p>
                 </div>
                 <div className="info-box animate-fade-in" style={{animationDelay: '0.3s'}}>
-                  <p><strong>{selectedCounty["% CTR Policy Premium 2023"]}%</strong> of policy premiums were subject to Consent to Rate notices in 2023.</p>
-                  <Tooltip content="[What's Consent to Rate?](https://www.charlotteobserver.com/news/local/article265676886.html)." />
+                  <p><strong>{selectedCounty["% CTR Policy Premium 2023"]}%</strong> of policy premiums were subject to Consent to Rate notices in 2023.
+                  <Tooltip content="[What's Consent to Rate?](https://www.charlotteobserver.com/news/local/article265676886.html)." /></p>
                 </div>
                 <div className="info-box animate-fade-in" style={{animationDelay: '0.4s'}}>
                   <p className="info-text">
