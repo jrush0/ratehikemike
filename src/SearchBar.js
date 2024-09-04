@@ -46,7 +46,7 @@ const SearchBar = ({ data, onSelect, onAutocompleteVisibility }) => {
   };
 
   return (
-    <div className="search-bar">
+    <div className="search-container">
       <input
         type="text"
         value={inputValue}
