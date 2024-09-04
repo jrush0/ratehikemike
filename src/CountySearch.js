@@ -214,7 +214,7 @@ const CountySearch = () => {
       </div>
       <div className="footer-container animate-on-scroll">
         <div className="footer-box">
-          Paid for by Friends of Natasha Marcus
+          <a href="https://www.natashamarcus.com/" style={{color: 'white', textDecoration: 'none'}}>Paid for by Friends of Natasha Marcus (<span style={{textDecoration: 'underline'}}>natashamarcus.com</span>)</a>
         </div>
       </div>
     </>
