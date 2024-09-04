@@ -177,22 +177,6 @@ input:focus {
   transition: opacity 0.3s ease-out;
 }
 
-.header-image {
-  /* Remove animation */
-}
-
-.county-search {
-  /* Remove animation */
-}
-
-.search-content h1, .search-content h2 {
-  /* Remove animation */
-}
-
-.search-container {
-  /* Remove animation */
-}
-
 .info-box {
   animation: fadeInSlideUp 0.8s ease-out;
 }
@@ -945,22 +929,6 @@ html, body {
   100% {
     transform: scale(1);
   }
-}
-
-.header-image {
-  /* Remove animation */
-}
-
-.county-search {
-  /* Remove animation */
-}
-
-.search-content h1, .search-content h2 {
-  /* Remove animation */
-}
-
-.search-container {
-  /* Remove animation */
 }
 
 .info-box-container {
