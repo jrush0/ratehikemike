@@ -202,8 +202,6 @@ const CountySearch = () => {
               <li><strong>Crack down</strong> on fraud that raises rates.</li>
               <li>Provide customers with more options and <strong>better prices</strong>.</li>
               <li>Refuse campaign contributions from insurance companies and make decisions based on the public’s best interest.</li>
-              <li>Promote <strong>public safety</strong> by supporting the work of our firefighters and the State Fire Marshal.</li>
-            </ul>
             <div className="desktop-spacer"></div>
             <a href="https://natashamarcus.com" target="_blank" rel="noopener noreferrer" className="learn-more-button">
               Learn more about Natasha Marcus
