@@ -7,6 +7,7 @@ const Tooltip = ({ content }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [position, setPosition] = useState({ top: 0, left: 0 });
   const iconRef = useRef(null);
+  const tooltipRef = useRef(null);
 
   const toggleTooltip = () => {
     setIsVisible(!isVisible);
@@ -33,12 +34,21 @@ const Tooltip = ({ content }) => {
         setPosition({ top, left });
       };
 
+      const handleClickOutside = (event) => {
+        if (tooltipRef.current && !tooltipRef.current.contains(event.target) && !iconRef.current.contains(event.target)) {
+          setIsVisible(false);
+        }
+      };
+
       updatePosition();
       window.addEventListener('resize', updatePosition);
       window.addEventListener('scroll', updatePosition);
+      document.addEventListener('mousedown', handleClickOutside);
+
       return () => {
         window.removeEventListener('resize', updatePosition);
         window.removeEventListener('scroll', updatePosition);
+        document.removeEventListener('mousedown', handleClickOutside);
       };
     }
   }, [isVisible]);
@@ -48,6 +58,7 @@ const Tooltip = ({ content }) => {
 
     return ReactDOM.createPortal(
       <div
+        ref={tooltipRef}
         className="tooltip-content"
         style={{
           position: 'absolute',

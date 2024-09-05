@@ -73,7 +73,7 @@ const CountySearch = () => {
                 </div>
                 <div className="info-box animate-fade-in" style={{animationDelay: '0.3s'}}>
                   <p><strong>{selectedCounty["% CTR Policy Premium 2023"]}%</strong> of policy premiums were subject to Consent to Rate notices in 2023.
-                  <Tooltip content="[What's Consent to Rate?](https://www.charlotteobserver.com/news/local/article265676886.html)." /></p>
+                  <Tooltip content="[What's Consent to Rate?](https://www.charlotteobserver.com/news/local/article265676886.html)" /></p>
                 </div>
                 <div className="info-box animate-fade-in" style={{animationDelay: '0.4s'}}>
                   <p className="info-text">
