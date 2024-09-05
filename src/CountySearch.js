@@ -72,7 +72,7 @@ const CountySearch = () => {
                   <p>This county has a <strong>{selectedCounty["2024 NCRB Proposed Rate increase"]}%</strong> rate hike request pending for 2024.</p>
                 </div>
                 <div className="info-box animate-fade-in" style={{animationDelay: '0.3s'}}>
-                  <p><strong>{selectedCounty["% CTR Policy Premium 2023"]}%</strong> of policy premiums were subject to Consent to Rate notices in 2023.
+                  <p><strong>{selectedCounty["% CTR Policy Premium 2023"]}%</strong> of policies were subject to Consent to Rate notices in 2023, allowing insurance companies to bill you up to 250% of the maximum rate.
                   <Tooltip content="[What's Consent to Rate?](https://www.charlotteobserver.com/news/local/article265676886.html)" /></p>
                 </div>
                 <div className="info-box animate-fade-in" style={{animationDelay: '0.4s'}}>
@@ -126,6 +126,14 @@ const CountySearch = () => {
               <div className="stats-text">
                 <p><strong>Six</strong> mobile home insurance hikes. His predecessor allowed only <strong>two.</strong>
                   <Tooltip content="Sources: [2019 2x Causey Rate Hikes](https://www.insurancejournal.com/news/southeast/2019/09/30/541569.htm), [2021 2x Causey Rate Hikes](https://www.carolinacoastonline.com/news_times/article_632278b2-43f0-11ec-b873-6b247d7007f4.html), [2023 2x Causey Rate Hike](https://wlos.com/news/local/mobile-home-owners-in-north-carolina-face-smaller-insurance-rate-increases-insurance-commissioner-mike-causey-north-carolina-rate-bureau-department-of-insurance), [2015 Wayne Goodwin Rate Hike](https://www.ncrb.org/Portals/0/ncrb/personal%20lines%20services/Rate%20Filings/4-22-15%20Final%20MH%28C%29%20Settlement%20Agreement%20and%20Consent%20Order.pdf?ver=2015-05-06-111356-000)" />
+                </p>
+              </div>
+            </div>
+            <div className="info-box stats-box">
+              <div className="stats-number">3</div>
+              <div className="stats-text">
+                <p>Raised condo insurance rates <strong>three times</strong>, resulting in an average increase of <strong>over 21%</strong>.
+                  <Tooltip content="Source: [NCRB Rate Filings](https://www.ncrb.org/ncrb/Residential-Property/Rate-Filings). Rate increase data for Form 6 filings." />
                 </p>
               </div>
             </div>
