@@ -139,7 +139,7 @@ export const countyData = [
     "2017-2020 NCRB Rate": 27.3,
     "% CTR Policy Premium 2023": 31,
     "% # CTR Policies 2023": 0,
-    "2024 NCRB Proposed Rate increase": 43,
+    "2024 NCRB Proposed Rate increase": 99.4,
     "Higher than inflation": "Between 2017-2020, insurance rates rose by <strong>27.3%</strong>, which is <strong>19.6%</strong> faster than inflation.",
     "Rate against inflation": 19.6
   },
